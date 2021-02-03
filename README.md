@@ -6,7 +6,7 @@ Repository for paper "Optimal soil sampling design based on the maxvol algorithm
 
 1) clone this repo
  
-`git clone https://github.com/petrovskaia/EDSEL.git`
+`git clone https://github.com/petrovskaia/maxvol-for-soil-sampling.git`
 
 2) create new `conda env` from `yml` file 
 
