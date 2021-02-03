@@ -1,5 +1,7 @@
 # maxvol-for-soil-sampling
 Repository for paper "Optimal soil sampling design based on the maxvol algorithm"
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Qqcpmo09lSwbpfpox2o0QZi4ATBllFyH?usp=sharing)
+
 
 
 ### How to start with `maxvol` for  soil sampling
