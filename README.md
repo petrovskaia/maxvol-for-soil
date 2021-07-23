@@ -7,7 +7,7 @@ You can find an example on Kursk site in Google Collab
 
 If you want to use maxvol soil sampling in your project, visit the main repository
 
-https://github.com/EDSEL-skoltech/maxvol_soil_sampling
+https://github.com/EDSEL-skoltech/maxvol_sampling
 
 ### How to start with `maxvol` for  soil sampling
 
