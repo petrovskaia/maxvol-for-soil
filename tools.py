@@ -15,24 +15,6 @@ def norm_data(X, bounds=(-1.0, 1.0), copy=True):
 
     return X.T
 
-def points_selection(X, max_n_pnts, min_n_pnts, cut_fun=None, penalty = None):
-    
-    """Function for selecting optimal parameters for dimentionality reduction method and for clustering.
-    
-    Parameters 
-    ----------------
-    X: array with shape (number_of_pixels*number_of_features)
-            Initial data
-           
-    """
-    
-
-    #MaxVol
-    
-    res = rect_maxvol_cut(X, maxK=max_n_pnts, minK=min_n_pnts, cut_fun=cut_fun, penalty=penalty)[0]
-
-    return res
-
 
 def add_coords(X=None, size=(285, 217), order='C', idx_good_mask=None):
     """
@@ -40,21 +22,20 @@ def add_coords(X=None, size=(285, 217), order='C', idx_good_mask=None):
     """
     w, h = size
     x_coord, y_coord = np.meshgrid(np.arange(h), np.arange(w))
-    
-    
     if idx_good_mask is None:
         idx_good_mask = np.arange(x_coord.size)
-    
+
     if X is None:
         return np.hstack((
             x_coord.flatten(order=order)[idx_good_mask, None],
             y_coord.flatten(order=order)[idx_good_mask, None]))
+
     else:
         return np.hstack((np.array(X, copy=False),
                           x_coord.flatten(order=order)[idx_good_mask, None],
                           y_coord.flatten(order=order)[idx_good_mask, None]))
     
-def gen_input(mode, data, shapes,mask):
+def gen_input(mode, data, shapes, df_drop):
     modes = ['usual', 'normed',
          'XY', 'XY_normed']
     fn_X_embedded = modes[mode]
@@ -62,10 +43,9 @@ def gen_input(mode, data, shapes,mask):
         lambda x: np.array(x),
         lambda x: norm_data(x),
         lambda x: add_coords(
-            x, size=shapes[0], idx_good_mask=mask),
-        lambda x: norm_data(gen_input(2, x, shapes, mask)[0], copy=False),
+            x, size=shapes[0], idx_good_mask=df_drop['slope'].index.values),
+        lambda x: norm_data(gen_input(2, x, shapes,df_drop)[0], copy=False),
     ][mode](data), fn_X_embedded
-
 
 def my_score(a, b):
     a = np.array(a, copy=False)

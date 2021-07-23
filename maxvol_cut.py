@@ -78,6 +78,7 @@ def rect_maxvol_cut(A, tol = 1., maxK = None, min_add_K = None, minK = None, sta
         # add i to index and recompute C and square norms of each row by SVM-formula
         index[K] = i
         #chosen[i] = 0 -- replaced by the next line
+        #print(chosen)
         cut_fun(chosen, i)
         if (chosen == 0).all():
             print('Failed')
@@ -114,7 +115,7 @@ def f_penal(X, bnd, level=0.0):
         if bnd == 0:
             return x*0.0 + 1.0  # crookedly, but it works
         else:
-            return (1.0 - level)*np.minimum(x, bnd_abs)/bnd_abs + level
+            return (1.0 - level)*np.minimum(x, bnd_abs)/bnd_abs # + level
 
     return lin_func(dist)
 
