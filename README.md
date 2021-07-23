@@ -1,9 +1,13 @@
 # maxvol-for-soil-sampling
 Repository for paper "Optimal soil sampling design based on the maxvol algorithm".
 
-You can find an example on Kursk site in Google Collab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Qqcpmo09lSwbpfpox2o0QZi4ATBllFyH?usp=sharing)
+You can find an example on Kursk site in Google Collab 
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Qqcpmo09lSwbpfpox2o0QZi4ATBllFyH?usp=sharing)
 
+If you want to use maxvol soil sampling in your project, visit the main repository
+
+https://github.com/EDSEL-skoltech/maxvol_sampling
 
 ### How to start with `maxvol` for  soil sampling
 
